@@ -112,20 +112,38 @@ body {
 			<div id="status-notice"></div>
 		</div>
 		<script>
-const iframe = document.getElementById('iframe');
-const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-const innerCanvas = iframeDoc.getElementById('canvas');
-			
-const GODOT_CONFIG = {"args":[],"canvas": innerCanvas,"canvasResizePolicy":1,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":62700,"index.wasm":37700666},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
-const GODOT_THREADS_ENABLED = false;
-		</script>
-		
-		<script src="index.js"></script>
-		
-		<script>
-const engine = new Engine(GODOT_CONFIG);
+var GODOT_CONFIG;
+var GODOT_THREADS_ENABLED = false;
 
-(function () {
+const iframe = document.getElementById('iframe');
+iframe.onload = function() {
+	const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+	const innerCanvas = iframeDoc.getElementById('canvas');
+	
+	GODOT_CONFIG = {
+		"args": [],
+		"canvas": innerCanvas,
+		"canvasResizePolicy": 1,
+		"emscriptenPoolSize": 8,
+		"ensureCrossOriginIsolationHeaders": true,
+		"executable": "index",
+		"experimentalVK": false,
+		"fileSizes": {"index.pck": 62700, "index.wasm": 37700666},
+		"focusCanvas": true,
+		"gdextensionLibs": [],
+		"godotPoolSize": 4
+	};
+	
+	const script = document.createElement('script');
+	script.src = 'index.js';
+	script.onload = function() {
+		startGameLogic(innerCanvas);
+	};
+	document.body.appendChild(script);
+};
+
+function startGameLogic(innerCanvas) {
+	const engine = new Engine(GODOT_CONFIG);
 	const statusOverlay = document.getElementById('status');
 	const statusProgress = document.getElementById('status-progress');
 	const statusNotice = document.getElementById('status-notice');
@@ -184,7 +202,6 @@ const engine = new Engine(GODOT_CONFIG);
 			} catch (err) {
 				serviceWorkerRegistrationPromise = Promise.reject(new Error('Service worker registration failed.'));
 			}
-			// There's a chance that installing the service worker would fix the issue
 			Promise.race([
 				serviceWorkerRegistrationPromise.then((registration) => {
 					if (registration != null) {
@@ -192,24 +209,22 @@ const engine = new Engine(GODOT_CONFIG);
 					}
 					return registration;
 				}).then(() => engine.installServiceWorker()),
-				// For some reason, `getRegistration()` can stall
 				new Promise((resolve) => {
 					setTimeout(() => resolve(), 2000);
 				}),
 			]).then(() => {
-				// Reload if there was no error.
 				window.location.reload();
 			}).catch((err) => {
 				console.error('Error while registering service worker:', err);
 			});
 		} else {
-			// Display the message as usual
 			const missingMsg = 'Error\nThe following features required to run Godot projects on the Web are missing:\n';
 			displayFailureNotice(missingMsg + missing.join('\n'));
 		}
 	} else {
 		setStatusMode('progress');
 		engine.startGame({
+			'canvas': innerCanvas,
 			'onProgress': function (current, total) {
 				if (current > 0 && total > 0) {
 					statusProgress.value = current;
@@ -223,7 +238,7 @@ const engine = new Engine(GODOT_CONFIG);
 			setStatusMode('hidden');
 		}, displayFailureNotice);
 	}
-}());
+}
 		</script>
 	</body>
 </html>
