@@ -1,0 +1,6 @@
+res://Scenes/Finish.tscn
+res://Scenes/Main.tscn
+res://Scripts/Bird.gd
+res://Scripts/Finish.gd
+res://Scripts/Main.gd
+res://Scenes/Pipe.tscn
