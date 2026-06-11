@@ -1,12 +1,12 @@
 72322a848ab928aa5c89f0cb78209805
 ::res://::1780919078
-export_presets.cfg::TextFile::-1::1781177734::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile::-1::1781181844::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::2749605730106654074::1780919080::1780919104::1::::<><><>0<>0<>0cb02b61f91f6059eb0b2fd2ca587ad2<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://Build/::1781176914
 ::res://Build/Web/::1781176918
-index.apple-touch-icon.png::CompressedTexture2D::7100209423071875118::1781177024::1781177034::1::::<><><>0<>0<>03274ad973beb219e42daadaf59fd32f<>res://.godot/imported/index.apple-touch-icon.png-5c848b430e8394b21160a8ebea75b859.ctex::
-index.icon.png::CompressedTexture2D::3237669241647223350::1781177024::1781177034::1::::<><><>0<>0<>ad9fbc388d496577b22e29c549c88bce<>res://.godot/imported/index.icon.png-1a6b71df0e6f7da3dfe358193939582d.ctex::
-index.png::CompressedTexture2D::7466199792710204150::1781177024::1781177034::1::::<><><>0<>0<>b2187452d2d4e23f46e3eba74e4b954e<>res://.godot/imported/index.png-9c61bad5332439ec07a7e5ff29f99eb3.ctex::
+index.apple-touch-icon.png::CompressedTexture2D::7100209423071875118::1781181842::1781177034::1::::<><><>0<>0<>03274ad973beb219e42daadaf59fd32f<>res://.godot/imported/index.apple-touch-icon.png-5c848b430e8394b21160a8ebea75b859.ctex::
+index.icon.png::CompressedTexture2D::3237669241647223350::1781181840::1781177034::1::::<><><>0<>0<>ad9fbc388d496577b22e29c549c88bce<>res://.godot/imported/index.icon.png-1a6b71df0e6f7da3dfe358193939582d.ctex::
+index.png::CompressedTexture2D::7466199792710204150::1781181838::1781177034::1::::<><><>0<>0<>b2187452d2d4e23f46e3eba74e4b954e<>res://.godot/imported/index.png-9c61bad5332439ec07a7e5ff29f99eb3.ctex::
 ::res://Scenes/::1780919140
 Bird.tscn::PackedScene::308201117505917800::1781012440::0::1::::<><><>0<>0<><>::uid://1lc1xrnbocv::::res://Scripts/Bird.gd<>uid://cwk61qf41m8ko::::res://Textures/redbird-upflap.png<>uid://b2x23y1mgk2g2::::res://Textures/redbird-midflap.png<>uid://bwpalfrny8hyd::::res://Textures/redbird-downflap.png
 Finish.tscn::PackedScene::4480449059270302520::1781176090::0::1::::<><><>0<>0<><>::uid://duyyuwvscl58x::::res://Textures/finish-line.png
