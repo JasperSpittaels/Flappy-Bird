@@ -15,6 +15,7 @@ var score
 var ground_height: int
 var pipes: Array
 var pipe_count: int = 0
+var letter_index: int = 0
 var screen_size: Vector2i
 
 func _ready() -> void:
@@ -28,12 +29,16 @@ func new_game() -> void:
 	score = 0
 	scroll = 0.0
 	pipe_count = 0
+	letter_index = 0
 	
 	for pipe in pipes:
 		if is_instance_valid(pipe):
 			pipe.queue_free()
+			
 	pipes.clear()
 	$Bird.reset()
+	$Won.visible = false
+	$Again.visible = false
 	
 func _input(event: InputEvent) -> void:
 	if game_over == false:
@@ -67,25 +72,21 @@ func _on_pipe_timer_timeout() -> void:
 	generate_pipes()
 	
 func generate_pipes() -> void:
-	if pipe_count == WORD.length():
+	if letter_index >= WORD.length():
 		spawn_finish()
-		pipe_count += 1
-		return
-	
-	if pipe_count > WORD.length():
 		return
 	
 	var pipe = pipe_scene.instantiate()
 	pipe.position.x = screen_size.x + PIPE_DELAY
 	pipe.position.y = (screen_size.y - ground_height) / 2.0 + randi_range(-PIPE_RANGE, PIPE_RANGE)
 	pipe.get_node("Area2D").hit.connect(bird_hit)
-	if pipe_count % 2 == 0:
-		var next_letter = WORD[pipe_count]
+	if pipe_count % 2 == 0 and letter_index < WORD.length():
+		var next_letter = WORD[letter_index]
 		if pipe.get_node("Area2D").has_method("set_letter"):
 			pipe.get_node("Area2D").set_letter(next_letter)
-		
+		letter_index += 1
 	elif pipe.get_node("Area2D").has_method("hide_letter"):
-			pipe.get_node("Area2D").hide_letter()
+		pipe.get_node("Area2D").hide_letter()
 			
 	add_child(pipe)
 	pipes.append(pipe)
@@ -104,10 +105,8 @@ func spawn_finish() -> void:
 	
 func _on_finish_entered(body) -> void:
 	if body.name == "Bird":
-		bird_hit_finish()
-		
-func bird_hit_finish() -> void:
-	stop_game()
+		$Won.visible = true
+		stop_game()
 	
 func stop_game() -> void:
 	$PipeTimer.stop()
@@ -118,12 +117,19 @@ func stop_game() -> void:
 func check_top() -> void:
 	if $Bird.position.y < 0:
 		$Bird.falling = true
+		$Again.visible = true
 		stop_game()
 			
 func bird_hit() -> void:
 	$Bird.falling = true
+	$Again.visible = true
 	stop_game()
 
 func _on_ground_hit() -> void:
 	$Bird.falling = true
+	$Again.visible = true
 	stop_game()
+
+
+func _on_button_pressed() -> void:
+	new_game()

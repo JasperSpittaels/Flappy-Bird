@@ -11,16 +11,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7q8l"]
 size = Vector2(576, 112)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jw32o"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_50glp"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vy5pj"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bmxlf"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4kpch"]
-
 [node name="Main" type="Node2D" unique_id=1262506493]
 script = ExtResource("1_kln2b")
 pipe_scene = ExtResource("2_pbw6q")
@@ -52,66 +42,28 @@ shape = SubResource("RectangleShape2D_s7q8l")
 [node name="PipeTimer" type="Timer" parent="." unique_id=1851999820]
 wait_time = 2.0
 
-[node name="Won" type="Control" parent="." unique_id=2144306600]
-z_index = 1
+[node name="Control" type="Control" parent="." unique_id=2144306600]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 
-[node name="TextureRect" type="TextureRect" parent="Won" unique_id=393403558]
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=393403558]
 layout_mode = 1
 offset_right = 288.0
 offset_bottom = 512.0
 texture = ExtResource("1_r150o")
 
-[node name="CenterContainer" type="CenterContainer" parent="Won" unique_id=1500202289]
+[node name="CenterContainer" type="CenterContainer" parent="Control" unique_id=1500202289]
 layout_mode = 1
 offset_right = 288.0
 offset_bottom = 400.0
 
-[node name="Label" type="Label" parent="Won/CenterContainer" unique_id=1334740961]
+[node name="Label" type="Label" parent="Control/CenterContainer" unique_id=1334740961]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 30
 text = "Je hebt gewonnen"
 
-[node name="Again" type="Control" parent="." unique_id=499931404]
-z_index = 1
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="Again" unique_id=1131995115]
-layout_mode = 1
-offset_right = 288.0
-offset_bottom = 512.0
-texture = ExtResource("1_r150o")
-
-[node name="CenterContainer" type="CenterContainer" parent="Again" unique_id=1408722117]
-layout_mode = 1
-offset_right = 288.0
-offset_bottom = 400.0
-
-[node name="Button" type="Button" parent="Again/CenterContainer" unique_id=477533686]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxEmpty_jw32o")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_50glp")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_vy5pj")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_bmxlf")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4kpch")
-text = "Speel nog eens"
-
 [connection signal="body_entered" from="Ground/Area2D" to="Ground/Area2D" method="_on_body_entered"]
 [connection signal="hit" from="Ground/Area2D" to="." method="_on_ground_hit"]
 [connection signal="timeout" from="PipeTimer" to="." method="_on_pipe_timer_timeout"]
-[connection signal="pressed" from="Again/CenterContainer/Button" to="." method="_on_button_pressed"]
