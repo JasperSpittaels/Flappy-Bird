@@ -13,6 +13,7 @@ config_version=5
 config/name="Flappy Bird"
 run/main_scene="uid://d1uqtum4t7uku"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [display]
@@ -27,3 +28,4 @@ window/size/viewport_height=512
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_etc2_astc=true
