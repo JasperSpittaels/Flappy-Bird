@@ -18,6 +18,12 @@ body {
 	touch-action: none;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #canvas {
 	display: block;
 }
@@ -95,9 +101,11 @@ body {
 <script src="coi-serviceworker.js"></script>
 	</head>
 	<body>
-		<canvas id="canvas">
+		<div class="center">
+			<canvas id="canvas">
 			Your browser does not support the canvas tag.
 		</canvas>
+		</div>
 
 		<noscript>
 			Your browser does not support JavaScript.
