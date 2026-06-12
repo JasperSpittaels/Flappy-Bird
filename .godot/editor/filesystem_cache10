@@ -1,11 +1,15 @@
 72322a848ab928aa5c89f0cb78209805
 ::res://::1780919078
+cropped-Groen-32x32.png::CompressedTexture2D::340603924457488735::1781256832::1781256898::1::::<><><>0<>0<>93a1e1fd3ecf8284ea8811db1f9d1abf<>res://.godot/imported/cropped-Groen-32x32.png-5549e3a4448a92358e05de25066a57d0.ctex::
+cropped-Groen-180x180.png::CompressedTexture2D::5562203804123968016::1781256856::1781256898::1::::<><><>0<>0<>46ae9904e542524fdca6ec122863c531<>res://.godot/imported/cropped-Groen-180x180.png-2af29f79e5d03aa31ab26ecd493a2716.ctex::
+cropped-Groen-192x192.png::CompressedTexture2D::3218105150560410226::1781256846::1781256898::1::::<><><>0<>0<>375fcc47b49df7b87b9cff2b109e85c1<>res://.godot/imported/cropped-Groen-192x192.png-3c69cce757988ad4145f9119b814b545.ctex::
 export_presets.cfg::TextFile::-1::1781201834::0::1::::<><><>0<>0<><>::
+html.txt::TextFile::-1::1781256802::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::2749605730106654074::1780919080::1780919104::1::::<><><>0<>0<>0cb02b61f91f6059eb0b2fd2ca587ad2<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://Build/::1781176914
 ::res://Build/Web/::1781176918
-index.apple-touch-icon.png::CompressedTexture2D::7100209423071875118::1781201834::1781177034::1::::<><><>0<>0<>03274ad973beb219e42daadaf59fd32f<>res://.godot/imported/index.apple-touch-icon.png-5c848b430e8394b21160a8ebea75b859.ctex::
-index.icon.png::CompressedTexture2D::3237669241647223350::1781201834::1781177034::1::::<><><>0<>0<>ad9fbc388d496577b22e29c549c88bce<>res://.godot/imported/index.icon.png-1a6b71df0e6f7da3dfe358193939582d.ctex::
+index.apple-touch-icon.png::CompressedTexture2D::7100209423071875118::1781256504::1781256884::1::::<><><>0<>0<>03274ad973beb219e42daadaf59fd32f<>res://.godot/imported/index.apple-touch-icon.png-5c848b430e8394b21160a8ebea75b859.ctex::
+index.icon.png::CompressedTexture2D::3237669241647223350::1781256504::1781256884::1::::<><><>0<>0<>ad9fbc388d496577b22e29c549c88bce<>res://.godot/imported/index.icon.png-1a6b71df0e6f7da3dfe358193939582d.ctex::
 index.png::CompressedTexture2D::7466199792710204150::1781201834::1781177034::1::::<><><>0<>0<>b2187452d2d4e23f46e3eba74e4b954e<>res://.godot/imported/index.png-9c61bad5332439ec07a7e5ff29f99eb3.ctex::
 ::res://Scenes/::1780919140
 Bird.tscn::PackedScene::308201117505917800::1781012440::0::1::::<><><>0<>0<><>::uid://1lc1xrnbocv::::res://Scripts/Bird.gd<>uid://cwk61qf41m8ko::::res://Textures/redbird-upflap.png<>uid://b2x23y1mgk2g2::::res://Textures/redbird-midflap.png<>uid://bwpalfrny8hyd::::res://Textures/redbird-downflap.png
