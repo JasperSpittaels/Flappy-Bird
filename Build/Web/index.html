@@ -219,6 +219,16 @@ const engine = new Engine(GODOT_CONFIG);
 			},
 		}).then(() => {
 			setStatusMode('hidden');
+			
+			const canvas = document.getElementById('canvas');
+				function resizeCanvasToDisplaySize() {
+					if (canvas.width !== canvas.clientWidth || canvas.height !== canvas.clientHeight) {
+						canvas.width = canvas.clientWidth;
+						canvas.height = canvas.clientHeight;
+					}
+				}
+				resizeCanvasToDisplaySize();
+				window.addEventListener('resize', resizeCanvasToDisplaySize);
 		}, displayFailureNotice);
 	}
 }());
